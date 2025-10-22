@@ -4,13 +4,13 @@
 
 ## Phase 1: Addition
 
-* Should add two positive numbers [X]
-* Should add zero to a number     [X]
-* Should add Negative numbers     [X]
+* Should add two positive numbers [✅]
+* Should add zero to a number     [❌]
+* Should add Negative numbers     [❌]
 
 ---
 
 ## Phase 2: Subtraction
 
-* Should subtract two numbers                      [X]
-* Should handle negative results in subtraction    [X]
+* Should subtract two numbers                      [❌]
+* Should handle negative results in subtraction    [❌]
