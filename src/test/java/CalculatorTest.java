@@ -12,7 +12,7 @@ public class CalculatorTest {
     }
 
     @Test
-    @DisplayName("twoPositiveNumberAdditionTest")
+    @DisplayName("additionWithPositiveNumbers")
     public void testAdd() {
         int expected = 20;
         int result = calculator.add(5, 15);
@@ -24,6 +24,14 @@ public class CalculatorTest {
     public void testAddZero() {
         int expected = 10;
         int result = calculator.add(10, 0);
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    @DisplayName("additionWithNegativeNumbers")
+    public void testAddNegativeNumbers() {
+        int expected = -20;
+        int result = calculator.add(5, -15);
         Assertions.assertEquals(expected, result);
     }
 }

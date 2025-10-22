@@ -6,7 +6,7 @@
 
 * Should add two positive numbers [✅]
 * Should add zero to a number     [✅]
-* Should add negative numbers     [❌]
+* Should add negative numbers     [✅]
 
 ---
 
