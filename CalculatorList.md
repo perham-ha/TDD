@@ -5,8 +5,8 @@
 ## Phase 1: Addition
 
 * Should add two positive numbers [✅]
-* Should add zero to a number     [❌]
-* Should add Negative numbers     [❌]
+* Should add zero to a number     [✅]
+* Should add negative numbers     [❌]
 
 ---
 
