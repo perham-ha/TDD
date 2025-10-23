@@ -17,6 +17,6 @@ public class Calculator {
     }
 
     public double divideDecimals(double a, double b) {
-        return (double) 10 / 2.5;
+        return (double) a / b;
     }
 }
