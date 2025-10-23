@@ -18,7 +18,7 @@ public class CalculatorTest {
             "5, 0, 5",
             "-5, -10, -15"
     })
-    public void add_Integer(int a, int b, int expected) {
+    public void shouldAddTwoNumbers(int a, int b, int expected) {
         Assertions.assertEquals(expected, calculator.add(a, b));
     }
 
@@ -27,15 +27,16 @@ public class CalculatorTest {
             "5, 3, 2",
             "0, 10, -10"
     })
-    public void subtract_Integer(int a, int b, int expected) {
+    public void shouldSubtractTwoNumbers(int a, int b, int expected) {
         Assertions.assertEquals(expected, calculator.subtract(a, b));
     }
 
     @ParameterizedTest
     @CsvSource({
-            "4, 3, 12"
+            "4, 3, 12",
+            "3, 0, 0"
     })
-    public void multiply_Integer(int a, int b, int expected) {
+    public void shouldMultiplyTwoNumber(int a, int b, int expected) {
         Assertions.assertEquals(expected, calculator.multiply(a, b));
     }
 }
