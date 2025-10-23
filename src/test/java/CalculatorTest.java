@@ -28,6 +28,6 @@ public class CalculatorTest {
     @DisplayName("Should subtract two numbers")
     public void subtract_IntegerSubtraction() {
         int expected = 4;
-        Assertions.assertEquals(expected, calculator.subtract(5, 9));
+        Assertions.assertEquals(expected, calculator.subtract(9, 5));
     }
 }
