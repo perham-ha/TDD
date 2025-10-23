@@ -19,14 +19,14 @@
 
 ## Phase 3: Multiplication
 
-* Should multiply two numbers                    [❌]
-* Should return zero when multiplying by zero    [❌]
+* Should multiply two numbers                    [✅]
+* Should return zero when multiplying by zero    [✅]
 
 ---
 
 ## Phase 4: Division with Error Handling
 
-* Should divide two numbers                     [❌]
+* Should divide two numbers                     [✅]
 * Should handle decimal division                [❌]
 * Should throw exception when dividing by zero  [❌]
 
