@@ -45,7 +45,7 @@ public class CalculatorTest {
     @Test
     @DisplayName("Should Divide two numbers")
     public void shouldDivideTwoNumbers() {
-        int expected = 2;
-        Assertions.assertEquals(expected, calculator.divide(10, 5));
+        int expected = 7;
+        Assertions.assertEquals(expected, calculator.divide(21, 3));
     }
 }
