@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -29,5 +31,12 @@ public class CalculatorTest {
     })
     public void subtract_Integer(int a, int b, int expected) {
         Assertions.assertEquals(expected, calculator.subtract(a, b));
+    }
+
+    @Test
+    @DisplayName("Should multiply two numbers")
+    public void multiply_Integer() {
+        int expected = 10;
+        Assertions.assertEquals(expected, calculator.multiply(5, 2));
     }
 }
