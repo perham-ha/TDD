@@ -36,7 +36,7 @@ public class CalculatorTest {
     @Test
     @DisplayName("Should multiply two numbers")
     public void multiply_Integer() {
-        int expected = 10;
-        Assertions.assertEquals(expected, calculator.multiply(5, 2));
+        int expected = 12;
+        Assertions.assertEquals(expected, calculator.multiply(4, 3));
     }
 }
