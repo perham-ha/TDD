@@ -27,7 +27,7 @@ public class CalculatorTest {
     @Test
     @DisplayName("Should subtract two numbers")
     public void subtract_IntegerSubtraction() {
-        int expected = 4;
-        Assertions.assertEquals(expected, calculator.subtract(9, 5));
+        int expected = 2;
+        Assertions.assertEquals(expected, calculator.subtract(5, 3));
     }
 }
