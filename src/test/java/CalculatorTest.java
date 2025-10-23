@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class CalculatorTest {
     private Calculator calculator;
@@ -11,27 +11,14 @@ public class CalculatorTest {
         this.calculator = new Calculator();
     }
 
-    @Test
-    @DisplayName("additionWithPositiveNumbers")
-    public void testAdd() {
-        int expected = 20;
-        int result = calculator.add(5, 15);
-        Assertions.assertEquals(expected, result);
-    }
-
-    @Test
-    @DisplayName("additionWithZero")
-    public void testAddZero() {
-        int expected = 10;
-        int result = calculator.add(10, 0);
-        Assertions.assertEquals(expected, result);
-    }
-
-    @Test
-    @DisplayName("additionWithNegativeNumbers")
-    public void testAddNegativeNumbers() {
-        int expected = -20;
-        int result = calculator.add(5, -15);
-        Assertions.assertEquals(expected, result);
+    @ParameterizedTest
+    @CsvSource({
+            "2,7,9",
+            "0, 3, 3",
+            "5, 0, 5",
+            "-5, -10, -15"
+    })
+    public void add_IntegerAddition(int a, int b, int expected) {
+        Assertions.assertEquals(expected, calculator.add(a, b));
     }
 }
