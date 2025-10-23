@@ -44,4 +44,17 @@ public class MoneyConverterTest {
             assertThat(result).isEqualByComparingTo("220.06");
         }
     }
+
+    @Nested
+    @DisplayName("EUR to USD Conversion")
+    class eurToUsdTest {
+
+        @Test
+        @DisplayName("Should convert 92 EUR to 100 USD")
+        void shouldConvert92EurToUsd() {
+            BigDecimal usd = new BigDecimal("92.00");
+            BigDecimal result = converter.eurToUsd(usd);
+            assertThat(result).isEqualByComparingTo("100.00");
+        }
+    }
 }
