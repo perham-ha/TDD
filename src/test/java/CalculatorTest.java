@@ -43,9 +43,16 @@ public class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Should Divide two numbers")
+    @DisplayName("Should divide two numbers")
     public void shouldDivideTwoNumbers() {
         int expected = 7;
         Assertions.assertEquals(expected, calculator.divide(21, 3));
+    }
+
+    @Test
+    @DisplayName("Should hande decimal division")
+    public void shouldHandleDecimalDivision() {
+        double expected = 3.3333;
+        Assertions.assertEquals(expected, calculator.divide(10, 3));
     }
 }
