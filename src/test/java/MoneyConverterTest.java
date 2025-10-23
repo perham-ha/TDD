@@ -30,4 +30,12 @@ public class MoneyConverterTest {
         BigDecimal result = converter.usdToEur(usd);
         assertThat(result).isEqualByComparingTo("184.00");
     }
+
+    @Test
+    @DisplayName("Should have two decimals during conversion")
+    void shouldHaveTwoDecimalsDuringConversion() {
+        BigDecimal usd = new BigDecimal("239.2");
+        BigDecimal result = converter.usdToEur(usd);
+        assertThat(result).isEqualByComparingTo("220.06");
+    }
 }
