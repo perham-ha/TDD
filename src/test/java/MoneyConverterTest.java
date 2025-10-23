@@ -22,4 +22,12 @@ public class MoneyConverterTest {
         BigDecimal result = converter.usdToEur(usd);
         assertThat(result).isEqualByComparingTo("92.00");
     }
+
+    @Test
+    @DisplayName("Should convert 200 USD to 184 EUR")
+    void shouldConvert200UsdToEur() {
+        BigDecimal usd = new BigDecimal("200.00");
+        BigDecimal result = converter.usdToEur(usd);
+        assertThat(result).isEqualByComparingTo("184.00");
+    }
 }
