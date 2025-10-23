@@ -13,6 +13,6 @@ public class Calculator {
     }
 
     public int divide(int a, int b) {
-        return 10 / 5;
+        return a / b;
     }
 }
