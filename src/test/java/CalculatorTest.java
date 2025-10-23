@@ -24,7 +24,8 @@ public class CalculatorTest {
 
     @ParameterizedTest
     @CsvSource({
-            "5,3,2"
+            "5, 3, 2",
+            "0, 10, -10"
     })
     public void subtract_Integer(int a, int b, int expected) {
         Assertions.assertEquals(expected, calculator.subtract(a, b));
