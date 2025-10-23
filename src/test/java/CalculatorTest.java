@@ -52,7 +52,7 @@ public class CalculatorTest {
     @Test
     @DisplayName("Should hande decimal division")
     public void shouldHandleDecimalDivision() {
-        double expected = 4;
-        Assertions.assertEquals(expected, calculator.divideDecimals(10, 2.5));
+        double expected = 5;
+        Assertions.assertEquals(expected, calculator.divideDecimals(12.5, 2.5));
     }
 }
