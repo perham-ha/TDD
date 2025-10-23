@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -38,5 +40,12 @@ public class CalculatorTest {
     })
     public void shouldMultiplyTwoNumber(int a, int b, int expected) {
         Assertions.assertEquals(expected, calculator.multiply(a, b));
+    }
+
+    @Test
+    @DisplayName("Should Divide two numbers")
+    public void shouldDivideTwoNumbers() {
+        int expected = 2;
+        Assertions.assertEquals(expected, calculator.divide(10, 5));
     }
 }
