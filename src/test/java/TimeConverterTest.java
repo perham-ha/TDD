@@ -1,6 +1,8 @@
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import utils.TimeConverter;
 
 public class TimeConverterTest {
     private TimeConverter converter;
@@ -13,6 +15,6 @@ public class TimeConverterTest {
     @Test
     @DisplayName("Should convert 60 seconds to 1 minute")
     void shouldConvert60SecondsTo1Minute() {
-        assertThat(converter.secondsToMinutes(60)).isEqualTo(1.0);
+        Assertions.assertThat(converter.secondsToMinutes(60)).isEqualTo(1.0);
     }
 }
