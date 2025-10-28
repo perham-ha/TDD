@@ -2,9 +2,14 @@
 
 ---
 
-## Phase 1: SecondsToMinutes
+## ToDo:
 
-* Should convert 60 seconds to 1 minute           [✅]
-* Should throw exception for negative seconds     [❌]
+* Should convert seconds to minutes           [✅]
+* Should throw exception for negative seconds     [✅]
+* Should convert minutes to hours              [✅]
+* Should convert minutes to seconds [❌]
+* Should convert hours to minutes [❌]
+* Should convert hours to days [❌]
+* Should convert days to hours [❌]
 
 ---
