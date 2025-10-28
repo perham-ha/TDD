@@ -25,4 +25,10 @@ public class TimeConverterTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("negative");
     }
+
+    @Test
+    @DisplayName("Should convert 60 minutes to 1 hour")
+    void shouldConvert60MinutesTo1Hour() {
+        Assertions.assertThat(converter.minutesToHours(60).isEqualTo(1.0));
+    }
 }
