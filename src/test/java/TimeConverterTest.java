@@ -41,7 +41,13 @@ public class TimeConverterTest {
     @Test
     @DisplayName("Should throw exception for negative minutes")
     void shouldThrowExceptionForNegativeMinutes() {
+        // Tests negative minutes in `minutesToSeconds`
         Assertions.assertThatThrownBy(() -> converter.minutesToSeconds(-10))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("negative");
+
+        // Tests negative minutes in `minutesToHours`
+        Assertions.assertThatThrownBy(() -> converter.minutesToHours(-10))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("negative");
     }
