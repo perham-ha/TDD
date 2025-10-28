@@ -9,4 +9,9 @@ public class MoneyConverter {
         amount = amount.setScale(2, BigDecimal.ROUND_HALF_UP);
         return amount;
     }
+
+    public BigDecimal eurToUsd(BigDecimal ownedCurrency) {
+        BigDecimal amount = new BigDecimal("100");
+        return amount;
+    }
 }
