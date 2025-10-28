@@ -1,7 +1,4 @@
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import utils.MoneyConverter;
 
 import java.math.BigDecimal;
@@ -42,6 +39,15 @@ public class MoneyConverterTest {
             BigDecimal usd = new BigDecimal("239.2");
             BigDecimal result = converter.usdToEur(usd);
             assertThat(result).isEqualByComparingTo("220.06");
+        }
+
+        @Test
+        @DisplayName("Should throw exception for negative USD")
+        void shouldThrowExceptionForNegativeUsd() {
+            BigDecimal usd = new BigDecimal("-1");
+            Assertions.assertThrows(IllegalArgumentException.class, () -> {
+                converter.usdToEur(usd);
+            });
         }
     }
 
