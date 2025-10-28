@@ -17,4 +17,12 @@ public class TimeConverterTest {
     void shouldConvert60SecondsTo1Minute() {
         Assertions.assertThat(converter.secondsToMinutes(60)).isEqualTo(1.0);
     }
+
+    @Test
+    @DisplayName("Should throw exception for negative seconds")
+    void shouldThrowExceptionForNegativeSeconds() {
+        Assertions.assertThatThrownBy(() -> converter.secondsToMinutes(-1))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("negative");
+    }
 }
