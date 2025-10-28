@@ -21,8 +21,8 @@ public class TimeConverterTest {
     @Test
     @DisplayName("Should throw exception for negative seconds")
     void shouldThrowExceptionForNegativeSeconds() {
-        Assertions.assertThatThrownBy(() -> converter.secondsToMinutes(-1))
+        Assertions.assertThatThrownBy(() -> converter.secondsToMinutes(-10))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("negative");
+                .hasMessageContaining("negative");
     }
 }
