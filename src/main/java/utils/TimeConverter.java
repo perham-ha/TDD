@@ -17,6 +17,7 @@ public class TimeConverter {
     }
 
     public double minutesToHours(long minutes) {
+        validateNonNegative(minutes, "minutes");
         return (double) minutes / MINUTES_PER_HOUR;
     }
 
