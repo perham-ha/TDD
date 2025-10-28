@@ -21,7 +21,6 @@ public class TimeConverter {
     }
 
     public long minutesToSeconds(double minutes) {
-        validateNonNegative(minutes, "minutes");
         return Math.round(minutes * SECONDS_PER_MINUTE);
     }
 
