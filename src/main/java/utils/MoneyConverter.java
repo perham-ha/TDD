@@ -1,6 +1,7 @@
 package utils;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class MoneyConverter {
     public BigDecimal usdToEur(BigDecimal ownedCurrency) {
@@ -11,7 +12,10 @@ public class MoneyConverter {
     }
 
     public BigDecimal eurToUsd(BigDecimal ownedCurrency) {
-        BigDecimal amount = new BigDecimal("100");
+        BigDecimal conversationRate = new BigDecimal("1.00").divide(new BigDecimal("0.92"), 10, RoundingMode.HALF_UP);
+        BigDecimal amount = ownedCurrency.multiply(conversationRate);
+
+        amount = amount.setScale(2, BigDecimal.ROUND_HALF_UP);
         return amount;
     }
 }
