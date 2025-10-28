@@ -29,6 +29,6 @@ public class TimeConverterTest {
     @Test
     @DisplayName("Should convert 60 minutes to 1 hour")
     void shouldConvert60MinutesTo1Hour() {
-        Assertions.assertThat(converter.minutesToHours(60).isEqualTo(1.0));
+        Assertions.assertThat(converter.minutesToHours(60)).isEqualTo(1.0);
     }
 }
