@@ -56,5 +56,13 @@ public class MoneyConverterTest {
             BigDecimal result = converter.eurToUsd(usd);
             assertThat(result).isEqualByComparingTo("100.00");
         }
+
+        @Test
+        @DisplayName("Should convert 184 EUR to 200 USD")
+        void shouldConvert184EurToUsd() {
+            BigDecimal usd = new BigDecimal("184.00");
+            BigDecimal result = converter.eurToUsd(usd);
+            assertThat(result).isEqualByComparingTo("200.00");
+        }
     }
 }
