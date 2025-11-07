@@ -3,7 +3,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.Parameter;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import utils.StringProcessor;
@@ -54,6 +53,18 @@ public class StringProcessorTest {
                 assertEquals("", result, "Empty string should return an empty string");
             }
         }
+
+        @Test
+        @DisplayName("Should preserve spaces in reversal")
+        void shouldPreserveSpacesInReversal() {
+            String input = "a b c";
+            String expected = "c b a";
+
+            String result = stringProcessor.reverse(input);
+
+            assertEquals(expected, result);
+        }
+
     }
 
 }
