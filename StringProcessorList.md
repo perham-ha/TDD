@@ -7,7 +7,7 @@
 * Should reverse a simple String                              [✅]
 * Should handle single character                              [✅]
 * Should handle `Null` and empty Strings                      [✅]
-* Should preserve `spaces` in reversal                        [❌]
+* Should preserve `spaces` in reversal                        [✅]
 * Implement real `reverse()` with `StringBuilder`             [❌]
 * Should detect simple palindrome                             [❌]
 * Should detect non-palindrome                                [❌]
