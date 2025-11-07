@@ -30,6 +30,12 @@ public class StringProcessorTest {
             // Check if returned value matches expected value
             assertEquals(expected, result);
         }
+
+        @Test
+        @DisplayName("Should handle a single character")
+        void shouldHandleSingleCharacter() {
+            assertEquals("x", stringProcessor.reverse("x"));
+        }
     }
 
 }
