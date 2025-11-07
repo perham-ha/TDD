@@ -3,6 +3,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.Parameter;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.NullAndEmptySource;
 import utils.StringProcessor;
 
 @DisplayName("StringProcessor TDD Demo")
@@ -35,6 +38,21 @@ public class StringProcessorTest {
         @DisplayName("Should handle a single character")
         void shouldHandleSingleCharacter() {
             assertEquals("x", stringProcessor.reverse("x"));
+        }
+
+        @ParameterizedTest
+        @NullAndEmptySource
+        @DisplayName("Should handle null and empty strings")
+        void shouldHandleNullAndEmptyStrings(String input) {
+            // Save result from reverse method
+            String result = stringProcessor.reverse(input);
+
+            // Assertions to see that values are as expected
+            if (input == null) {
+                assertNull(result, "Null should return null");
+            } else {
+                assertEquals("", result, "Empty string should return an empty string");
+            }
         }
     }
 
