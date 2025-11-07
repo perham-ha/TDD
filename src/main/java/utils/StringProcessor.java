@@ -3,10 +3,11 @@ package utils;
 public class StringProcessor {
 
     public String reverse(String str) {
+        // Avoiding NullPointerException
+        if(str == null) {return null;}
+
         // Strings with 0 or 1 characters remain unchanged
-        if (str.length() <= 1) {
-            return str;
-        }
+        if (str.length() <= 1) {return str;}
 
         // Converting String (immutable) to array of characters
         char[] characters = str.toCharArray();
