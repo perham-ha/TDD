@@ -20,10 +20,20 @@ public class StringProcessor {
         originalString.reverse();
 
         // Convert StringBuilder object back to a String (I assume we require String
-        // New variable for clarity and easier future handling
+        // New variable for clarity
         String reversedString = originalString.toString();
 
         // Constructs and returns a new String from the newly reversed char array
         return reversedString;
+    }
+
+    // Palindrome detection method using existing `reverse()` method
+    public boolean isPalindrome(String str) {
+        // Empty strings and strings with <=1 characters are considered palindromes
+        if (str == null || str.length() <= 1) {
+            return true;
+        }
+        // Returns boolean comparison to reversed string with `equals()` method
+        return str.equals(reverse(str));
     }
 }
