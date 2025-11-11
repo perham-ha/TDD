@@ -33,7 +33,11 @@ public class StringProcessor {
         if (str == null || str.length() <= 1) {
             return true;
         }
+
+        // Convert string to lower case
+        String lowerCaseString = str.toLowerCase();
+
         // Returns boolean comparison to reversed string with `equals()` method
-        return str.equals(reverse(str));
+        return lowerCaseString.equals(reverse(lowerCaseString));
     }
 }
