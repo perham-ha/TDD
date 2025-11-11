@@ -103,5 +103,16 @@ public class StringProcessorTest {
             // Then
             assertTrue(stringProcessor.isPalindrome(input));
         }
+
+        @Test
+        @DisplayName("Should handle palindromes with spaces ")
+        void shouldHandlePalindromesWithSpaces() {
+            // Given
+            String input = "Draw o coward";
+
+            // When
+            // Then
+            assertTrue(stringProcessor.isPalindrome(input));
+        }
     }
 }
