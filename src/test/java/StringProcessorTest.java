@@ -1,4 +1,3 @@
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -6,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import utils.StringProcessor;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("StringProcessor TDD Demo")
 public class StringProcessorTest {
@@ -64,7 +65,21 @@ public class StringProcessorTest {
 
             assertEquals(expected, result);
         }
-
     }
 
+    @Nested
+    @DisplayName("Palindrome Detection Tests")
+    class PalindromeDetectionTests {
+        @Test
+        @DisplayName("Should detect simple palindrome")
+        void shouldDetectSimplePalindrome() {
+            // Given
+            String input = "racecar";
+
+            // When
+            // Then
+            assertTrue(stringProcessor.isPalindrome(input));
+
+        }
+    }
 }
