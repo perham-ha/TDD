@@ -23,7 +23,7 @@
 
 ### String Compression Tests
 
-* Should compress repeated characters                                   [❌]
+* Should compress repeated characters                                   [✅]
 * Should return original if compression doesn't reduce length           [❌]
 * Should handle single character                                        [❌]
 * Should handle null and empty strings in compression (parameterized)   [❌]

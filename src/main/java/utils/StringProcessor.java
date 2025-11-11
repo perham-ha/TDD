@@ -44,4 +44,34 @@ public class StringProcessor {
         // Returns boolean comparison to reversed string with `equals()` method
         return lowerCaseString.equals(reverse(lowerCaseString));
     }
+
+    // Compression method for Strings
+    public String compress(String str) {
+        StringBuilder compressedString = new StringBuilder();
+        char previous = str.charAt(0);
+        int count = 1;
+
+        // For-loop to compress String based on comparison
+        for (int i = 1; i < str.length(); i++) {
+            char current = str.charAt(i);
+
+            // Compares if current & previous match and updated counter
+            if (current == previous) {
+                count++;
+            }
+
+            // Else letter and counter are appended, previous is set to current value and count is reset
+            else {
+                compressedString.append(previous).append(count);
+                previous = current;
+                count = 1;
+            }
+        }
+
+        // One final append to include last number
+        compressedString.append(previous).append(count);
+
+        // changes StringBuilder object to String and returns value
+        return compressedString.toString();
+    }
 }
