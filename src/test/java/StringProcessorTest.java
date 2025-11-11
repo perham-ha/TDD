@@ -125,5 +125,17 @@ public class StringProcessorTest {
             // Then
             assertTrue(stringProcessor.isPalindrome(input));
         }
+
+        @ParameterizedTest
+        @NullAndEmptySource
+        @DisplayName("Should handle null and empty as palindromes")
+        void shouldHandleNullAndEmptyAsPalindromes(String input) {
+            // Given (Will be null and Empty)
+            boolean result = stringProcessor.isPalindrome(input);
+
+            // When
+            // Then
+            assertTrue(result);
+        }
     }
 }

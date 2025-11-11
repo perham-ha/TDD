@@ -19,13 +19,13 @@
 * Should handle case-insensitive palindromes                  [✅]
 * Should handle palindromes with spaces                       [✅]
 * Should handle single characters as palindrome               [✅]
-* Should handle null and empty as palindromes (parameterized) [❌]
+* Should handle null and empty as palindromes (parameterized) [✅]
 
 ### String Compression Tests
 
 * Should compress repeated characters                                   [❌]
 * Should return original if compression doesn't reduce length           [❌]
 * Should handle single character                                        [❌]
-* Should handle null and empty strings in compression" (parametriserad) [❌]
+* Should handle null and empty strings in compression" (parameterized)  [❌]
 
 ---
