@@ -138,4 +138,21 @@ public class StringProcessorTest {
             assertTrue(result);
         }
     }
+    @Nested
+    @DisplayName("String Compression Tests")
+    class StringCompressionTests {
+        @Test
+        @DisplayName("Should compress repeated characters ")
+        void shouldCompressRepeatedCharacters() {
+            // Given
+            String input = "aabbbcc";
+            String expected = "a2b3c2";
+
+            // When
+            String result = stringProcessor.compress(input);
+
+            // Then
+            assertEquals(expected, result);
+        }
+    }
 }
