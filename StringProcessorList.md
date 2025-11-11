@@ -12,7 +12,7 @@
 * Should detect simple palindrome                             [✅]
 * Should detect non-palindrome                                [✅]
 * Should handle case-insensitive palindromes                  [✅]
-* Should handle palindromes with spaces                       [❌]
+* Should handle palindromes with spaces                       [✅]
 * Should handle single characters as palindrome               [❌]
 * Should handle null and empty as palindromes (parameterized) [❌]
 

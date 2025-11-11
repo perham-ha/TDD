@@ -34,8 +34,12 @@ public class StringProcessor {
             return true;
         }
 
-        // Convert string to lower case
-        String lowerCaseString = str.toLowerCase();
+        // Convert string to lower case & replace non-alphanumerical characters
+        // replaceAll() method uses regex matching all not upper-case/lower-case/digit, due to ^(negate)
+        // A-Z might not be needed due to `toLowerCase` but is left as a safety measurement
+        // ref.
+        // https://stackoverflow.com/questions/1805518/replacing-all-non-alphanumeric-characters-with-empty-strings
+        String lowerCaseString = str.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
 
         // Returns boolean comparison to reversed string with `equals()` method
         return lowerCaseString.equals(reverse(lowerCaseString));
