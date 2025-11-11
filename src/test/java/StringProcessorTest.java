@@ -81,5 +81,17 @@ public class StringProcessorTest {
             assertTrue(stringProcessor.isPalindrome(input));
 
         }
+
+        @Test
+        @DisplayName("Should detect non-palindrome")
+        void shouldDetectNonPalindrome() {
+            // Given
+            String input = "notpalindrome";
+
+            // When
+            // Then
+            assertFalse(stringProcessor.isPalindrome(input));
+
+        }
     }
 }
