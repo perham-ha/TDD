@@ -105,10 +105,21 @@ public class StringProcessorTest {
         }
 
         @Test
-        @DisplayName("Should handle palindromes with spaces ")
+        @DisplayName("Should handle palindromes with spaces")
         void shouldHandlePalindromesWithSpaces() {
             // Given
             String input = "Draw o coward";
+
+            // When
+            // Then
+            assertTrue(stringProcessor.isPalindrome(input));
+        }
+
+        @Test
+        @DisplayName("Should handle single characters as palindrome")
+        void shouldHandleSingleCharacterAsPalindrome() {
+            // Given
+            String input = "a";
 
             // When
             // Then
