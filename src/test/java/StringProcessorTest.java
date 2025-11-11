@@ -91,7 +91,17 @@ public class StringProcessorTest {
             // When
             // Then
             assertFalse(stringProcessor.isPalindrome(input));
+        }
 
+        @Test
+        @DisplayName("Should handle case-insensitive palindromes")
+        void shouldHandleCaseInsensitivePalindromes() {
+            // Given
+            String input = "RaCeCar";
+
+            // When
+            // Then
+            assertTrue(stringProcessor.isPalindrome(input));
         }
     }
 }
