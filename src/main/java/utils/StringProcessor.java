@@ -47,6 +47,11 @@ public class StringProcessor {
 
     // Compression method for Strings
     public String compress(String str) {
+        // Converts null into empty strings for safety
+        if (str == null || str.isEmpty()) {
+            return "";
+        }
+
         StringBuilder compressedString = new StringBuilder();
         char previous = str.charAt(0);
         int count = 1;
