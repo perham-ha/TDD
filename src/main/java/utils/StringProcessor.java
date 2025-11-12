@@ -63,6 +63,9 @@ public class StringProcessor {
             // Else letter and counter are appended, previous is set to current value and count is reset
             else {
                 compressedString.append(previous).append(count);
+
+                // In case compressedString reaches str length during compression
+                if(compressedString.length() >= str.length()) {return str;}
                 previous = current;
                 count = 1;
             }
@@ -71,7 +74,9 @@ public class StringProcessor {
         // One final append to include last number
         compressedString.append(previous).append(count);
 
-        // changes StringBuilder object to String and returns value
-        return compressedString.toString();
+        // Uses ternary operator to control which String to return
+        // Just as a note to anyone reading the code, it works like below:
+        // Condition(True/False) ? resultIfTrue : resultIfFalse
+        return compressedString.length() < str.length() ? compressedString.toString() : str;
     }
 }
