@@ -142,11 +142,25 @@ public class StringProcessorTest {
     @DisplayName("String Compression Tests")
     class StringCompressionTests {
         @Test
-        @DisplayName("Should compress repeated characters ")
+        @DisplayName("Should compress repeated characters")
         void shouldCompressRepeatedCharacters() {
             // Given
             String input = "aabbbcc";
             String expected = "a2b3c2";
+
+            // When
+            String result = stringProcessor.compress(input);
+
+            // Then
+            assertEquals(expected, result);
+        }
+
+        @Test
+        @DisplayName("Should return original if compression doesn't reduce length")
+        void shouldReturnOriginalIfCompressionDoesNotReduceLength() {
+            // Given
+            String input = "abcde";
+            String expected = "abcde";
 
             // When
             String result = stringProcessor.compress(input);
