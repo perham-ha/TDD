@@ -1,7 +1,12 @@
 package utils;
 
-public class StringProcessor {
 
+/*
+* StringProcessor class that gives functionality in handling Strings
+* Commentary is excessive as this is a tutorial course and I wish to
+* make revisits easier.
+*/
+public class StringProcessor {
     public String reverse(String str) {
         // Avoiding NullPointerException
         if (str == null) {
