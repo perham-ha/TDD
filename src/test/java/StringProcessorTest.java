@@ -6,6 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import utils.StringProcessor;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("StringProcessor TDD Demo")
@@ -181,6 +182,17 @@ public class StringProcessorTest {
 
             // Then
             assertEquals(expected, result);
+        }
+        @ParameterizedTest
+        @NullAndEmptySource
+        @DisplayName("Should handle null and empty strings in compression")
+        void shouldHandleNullAndEmptyStringsInCompression (String input) {
+            // Given (Will be null and Empty)
+            String result = stringProcessor.compress(input);
+
+            // When
+            // Then
+            assertThat(result).isEqualTo(input == null ? "" : input);
         }
     }
 }
