@@ -168,5 +168,19 @@ public class StringProcessorTest {
             // Then
             assertEquals(expected, result);
         }
+
+        @Test
+        @DisplayName("Should handle single character")
+        void shouldHandleSingleCharacter() {
+            // Given
+            String input = "a";
+            String expected = "a";
+
+            // When
+            String result = stringProcessor.compress(input);
+
+            // Then
+            assertEquals(expected, result);
+        }
     }
 }
