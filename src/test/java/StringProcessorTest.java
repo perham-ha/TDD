@@ -321,4 +321,22 @@ public class StringProcessorTest {
             assertFalse(result);
         }
     }
+
+    @Nested
+    @DisplayName("String Manipulation Tests")
+    class StringManipulationTests {
+        @Test
+        @DisplayName("Should capitalize first letter of each word")
+        void shouldCapitalizeFirstLetterOfEachWord() {
+            // Given
+            String input = "hello world";
+            String expected = "Hello World";
+
+            // When
+            String result = stringProcessor.capitalizeWords(input);
+
+            // Then
+            assertEquals(expected, result);
+        }
+    }
 }
