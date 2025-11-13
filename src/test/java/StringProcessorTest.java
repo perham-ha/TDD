@@ -516,5 +516,25 @@ public class StringProcessorTest {
             // Then
             assertThat(result).isTrue();
         }
+
+        @ParameterizedTest
+        @ValueSource(strings = {
+                "++11234567890",    // Double plus
+                "abcdefghijk",      // Letters
+                "1234-56-7890",     // Incorrect group
+                "+1-23-4567890",    // Incorrect structure
+                "+30-234567890",    // Incorrect country code
+        })
+        @DisplayName("Should reject invalid phone number formats")
+        void shouldRejectInvalidPhoneNumberFormats(String input) {
+            // Given
+            // ValueSource above
+
+            // When
+            boolean result = stringProcessor.isValidPhoneNumber(input);
+
+            // Then
+            assertThat(result).isFalse();
+        }
     }
 }
