@@ -352,5 +352,20 @@ public class StringProcessorTest {
             // Then
             assertEquals(expected, result);
         }
+
+        @Test
+        @DisplayName("Should handle mixed case input in capitalization")
+        void shouldHandleMixedCaseInputInCapitalization() {
+            // Assumption to not normalize rest of string but manage to capitalize first regardless
+            // Given
+            String input = "hELlo WOrld";
+            String expected = "HELlo WOrld";
+
+            // When
+            String result = stringProcessor.capitalizeWords(input);
+
+            // Then
+            assertEquals(expected, result);
+        }
     }
 }
