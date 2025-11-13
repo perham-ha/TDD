@@ -499,5 +499,22 @@ public class StringProcessorTest {
             // Then
             assertThat(result).isEqualTo(input);
         }
+
+        @ParameterizedTest
+        @ValueSource(strings = {
+                "+11234567890",
+                "1234567890"
+        })
+        @DisplayName("Should validate US phone number format")
+        void shouldValidateUSPhoneNumberFormat() {
+            // Given
+            // ValueSource above
+
+            // When
+            boolean result = stringProcessor.isValidPhoneNumber(input);
+
+            // Then
+            assertThat(result).isTrue();
+        }
     }
 }
