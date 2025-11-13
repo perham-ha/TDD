@@ -44,17 +44,18 @@
 
 ### String Manipulation Tests
 
-* Should capitalize first letter of each word               [✅]
-* Should handle single word capitalization                  [✅]
-* Should handle mixed case input in capitalization          [✅]
-* Should handle null and empty strings in capitalization    [✅]
-* Should check if string contains substring                 [✅]
-* Should check case-insensitive substring                   [✅]
-* Should return false for non-existent substring            [✅]
-* Should remove duplicate characters                        [❌]
-* Should handle string with no duplicates                   [❌]
-* Should preserve order when removing duplicates            [❌]
-* Should handle null and empty strings in duplicate removal [❌]
+* Should capitalize first letter of each word                [✅]
+* Should handle single word capitalization                   [✅]
+* Should handle mixed case input in capitalization           [✅]
+* Should handle null and empty strings in capitalization     [✅]
+* Should check if string contains substring                  [✅]
+* Should check case-insensitive substring                    [✅]
+* Should return false for non-existent substring             [✅]
+* Should return false for null and empty string or substring [❌]
+* Should remove duplicate characters                         [❌]
+* Should handle string with no duplicates                    [❌]
+* Should preserve order when removing duplicates             [❌]
+* Should handle null and empty strings in duplicate removal  [❌]
 
 ### Advanced Validation Tests
 

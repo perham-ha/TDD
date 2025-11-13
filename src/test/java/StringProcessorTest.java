@@ -427,5 +427,21 @@ public class StringProcessorTest {
             // Then
             assertFalse(result);
         }
+
+        @ParameterizedTest
+        @NullAndEmptySource
+        @DisplayName("Should return false for null and empty string or substring")
+        void shouldReturnFalseForNullAndEmptyOrSubstring(String input) {
+            // Given
+            String  validString = "hello";
+
+            // When
+            // Then
+            // Case 1 - Invalid string, valid substring
+            assertFalse(stringProcessor.containsSubstring(input, validString));
+
+            // Case 2 - Valid string, invalid substring
+            assertFalse(stringProcessor.containsSubstring(validString, input));
+        }
     }
 }
