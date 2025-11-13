@@ -662,5 +662,25 @@ public class StringProcessorTest {
             // Then
             assertThat(result).isTrue();
         }
+
+        @ParameterizedTest
+        @ValueSource(strings = {
+                "hello         world",      // Multiple spaces
+                "hello\tworld",             // Tab
+                "hello\nworld",             // Newline
+                "hello \n  world\t ",   // Mixed whitespaces
+                "  hello  world  "          // Leading + Trailing different lengths
+        })
+        @DisplayName("Should handle word count with various whitespace")
+        void shouldHandleWordCountWithVariousWhitespace(String input) {
+            // When
+            int count = stringProcessor.countWords(input);
+
+            // Then
+            assertThat(count).isEqualTo(2);
+
+            // Option below if 2 words weren't always used in `ValueSource`
+            // assertThat(count).isEqualTo( (int) input.trim().split("\\s+").length );
+        }
     }
 }

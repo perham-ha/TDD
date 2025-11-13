@@ -72,6 +72,6 @@
 * Should handle strings with special characters    [✅]
 * Should handle Unicode characters                 [✅]
 * Should handle very long palindrome check         [✅]
-* Should handle word count with various whitespace [❌]
+* Should handle word count with various whitespace [✅]
 
 ---
