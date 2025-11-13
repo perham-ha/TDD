@@ -195,4 +195,22 @@ public class StringProcessorTest {
             assertThat(result).isEqualTo(input == null ? "" : input);
         }
     }
+
+    @Nested
+    @DisplayName("Word Count Tests")
+    class WordCountTests {
+        @Test
+        @DisplayName("Should count words in simple sentence")
+        void shouldCountWordsInSimpleSentence() {
+            // Given
+            String input = "hello world";
+            int expected = 2;
+
+            // When
+            int result = stringProcessor.wordCounter(input);
+
+            // Then
+            assertEquals(expected, result);
+        }
+    }
 }
