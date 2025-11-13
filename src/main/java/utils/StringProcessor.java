@@ -102,6 +102,6 @@ public class StringProcessor {
     }
 
     public boolean isValidEmail(String email) {
-        return "jacksparrow@email.com".equals(email);
+        return email.contains("@") && email.contains(".");
     }
 }
