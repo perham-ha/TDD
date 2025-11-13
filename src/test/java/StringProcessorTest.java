@@ -591,5 +591,12 @@ public class StringProcessorTest {
             // Then
             assertThat(result).isFalse();
         }
+
+        @ParameterizedTest
+        @NullAndEmptySource
+        @DisplayName("Should reject null and empty validation inputs")
+        void shouldRejectNullAndEmptyValidationInputs(String input) {
+            assertThat(stringProcessor.isValidURL(input)).isFalse();
+        }
     }
 }
