@@ -457,5 +457,19 @@ public class StringProcessorTest {
             // Then
             assertThat(result).isEqualTo(expected);
         }
+
+        @Test
+        @DisplayName("Should handle string with no duplicates")
+        void shouldHandleStringWithNoDuplicates() {
+            // Given
+            String input = "abcdefghijklmn";
+            String expected = "abcdefghijklmn";
+
+            // When
+            String result = stringProcessor.removeDuplicates(input);
+
+            // Then
+            assertThat(result).isEqualTo(expected);
+        }
     }
 }
