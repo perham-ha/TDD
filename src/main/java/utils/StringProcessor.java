@@ -184,7 +184,7 @@ public class StringProcessor {
     }
 
     public boolean isValidPhoneNumber(String phoneNumber) {
-        // Safeguard for null and empty phonenumber
+        // Safeguard for null and empty phoneNumber
         if (phoneNumber == null || phoneNumber.isBlank()) {
             return false;
         }
@@ -192,6 +192,10 @@ public class StringProcessor {
     }
 
     public boolean isValidURL(String url) {
+        // Safeguard for null and empty url
+        if (url == null || url.isBlank()) {
+            return false;
+        }
         return URL_PATTERN.matcher(url).matches();
     }
 }
