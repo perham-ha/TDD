@@ -153,6 +153,6 @@ public class StringProcessor {
     }
 
     public boolean containsSubstring(String str, String substring) {
-        return str.contains(substring);
+        return str.toLowerCase().contains(substring.toLowerCase());
     }
 }
