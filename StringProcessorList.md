@@ -32,7 +32,7 @@
 
 * Should count words in simple sentence                             [✅]
 * Should handle multiple spaces between words                       [✅]
-* Should handle leading and trailing spaces                         [❌]
+* Should handle leading and trailing spaces                         [✅]
 * Should count single word                                          [❌]
 * Should return zero for null, empty, or whitespace-only strings    [❌]
 

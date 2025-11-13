@@ -226,5 +226,19 @@ public class StringProcessorTest {
             // Then
             assertEquals(expected, result);
         }
+
+        @Test
+        @DisplayName("Should handle leading and trailing spaces")
+        void shouldHandleLeadingAndTrailingSpaces() {
+            // Given
+            String input = " Hello world once again ";
+            int expected = 4;
+
+            // When
+            int result = stringProcessor.wordCounter(input);
+
+            // Then
+            assertEquals(expected, result);
+        }
     }
 }
