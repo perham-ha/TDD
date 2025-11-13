@@ -44,7 +44,7 @@
 
 ### String Manipulation Tests
 
-* Should capitalize first letter of each word               [❌]
+* Should capitalize first letter of each word               [✅]
 * Should handle single word capitalization                  [❌]
 * Should handle mixed case input in capitalization          [❌]
 * Should handle null and empty strings in capitalization    [❌]

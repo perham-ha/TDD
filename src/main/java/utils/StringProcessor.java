@@ -119,6 +119,33 @@ public class StringProcessor {
     }
 
     public String capitalizeWords(String str) {
-        return "Hello World";
+
+        // Remove leading/trailing whitespaces and split on one or more whitespace characters
+        // Multiple spaces, tabs, or newlines are treated as single separator
+        String[] initialWords = str.trim().split("\\s+");
+
+        // Used for easier and more efficient handling of words (SB object)
+        StringBuilder capitalizedWords = new StringBuilder();
+
+        // Iterate through each extracted word
+        for (int i = 0; i < initialWords.length; i++) {
+            String word = initialWords[i];
+
+            // Capitalize the first character of the word
+            capitalizedWords.append(Character.toUpperCase(word.charAt(0)));
+
+            // Append remaining characters, in the case of more than 1 character words
+            if (word.length() > 1) {
+                capitalizedWords.append(word.substring(1));
+            }
+
+            // Append space only between words, not after last one (avoid trailing space
+            if (i < initialWords.length -1) {
+                capitalizedWords.append(" ");
+            }
+        }
+
+        // Return the combined capitalized string
+        return capitalizedWords.toString();
     }
 }
