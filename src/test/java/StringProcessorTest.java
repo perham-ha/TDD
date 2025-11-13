@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
+import org.junit.jupiter.params.provider.ValueSource;
 import utils.StringProcessor;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -253,6 +254,23 @@ public class StringProcessorTest {
 
             // Then
             assertEquals(expected, result);
+        }
+
+        @ParameterizedTest
+        @NullAndEmptySource
+        @ValueSource(strings = {
+                "   ",      // Spaces
+                "\t",       // Tab
+                "\n",       // Newline
+                " \n \t "   // Mix of different whitespace
+        })
+        @DisplayName("Should return zero for null, empty, or whitespace-only strings")
+        void shouldReturnZeroForNullAndEmptyOrWhitespaceOnlyStrings(String input) {
+            // When
+            int result = stringProcessor.wordCounter(input);
+
+            // Then
+            assertEquals(0, result);
         }
     }
 }
