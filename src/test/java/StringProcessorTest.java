@@ -506,7 +506,7 @@ public class StringProcessorTest {
                 "1234567890"
         })
         @DisplayName("Should validate US phone number format")
-        void shouldValidateUSPhoneNumberFormat() {
+        void shouldValidateUSPhoneNumberFormat(String input) {
             // Given
             // ValueSource above
 

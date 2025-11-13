@@ -175,4 +175,8 @@ public class StringProcessor {
 
         return cleanedString.toString();
     }
+
+    public boolean isValidPhoneNumber(String phonenumber) {
+        return phonenumber.matches("^\\+?1?\\d{10}$");
+    }
 }
