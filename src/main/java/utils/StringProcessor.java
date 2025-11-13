@@ -89,4 +89,15 @@ public class StringProcessor {
         // Condition(True/False) ? resultIfTrue : resultIfFalse
         return compressedString.length() < str.length() ? compressedString.toString() : str;
     }
+
+    public int wordCounter(String str) {
+        if (str == null || str.length() <= 1) {
+            return 0;
+        }
+
+        // The regex will match one or more whitespace characters
+        // ref. https://www.baeldung.com/java-regex-s-splus
+        String[] words = str.trim().split("\\s+");
+        return words.length;
+    }
 }

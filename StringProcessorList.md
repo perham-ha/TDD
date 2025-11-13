@@ -30,7 +30,7 @@
 
 ### Word Count Tests
 
-* Should count words in simple sentence                             [❌]
+* Should count words in simple sentence                             [✅]
 * Should handle multiple spaces between words                       [❌]
 * Should handle leading and trailing spaces                         [❌]
 * Should count single word                                          [❌]
