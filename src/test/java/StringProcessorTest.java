@@ -367,5 +367,23 @@ public class StringProcessorTest {
             // Then
             assertEquals(expected, result);
         }
+
+        @ParameterizedTest
+        @NullAndEmptySource
+        @ValueSource(strings = {
+                "   ",      // Spaces
+                "\t",       // Tab
+                "\n",       // Newline
+                " \n \t "   // Mix of different whitespace
+        })
+        @DisplayName("Should handle null and empty strings in capitalization")
+        void shouldHandleNullAndEmptyStringsInCapitalization(String input) {
+            // Given
+            // When
+            String result = stringProcessor.capitalizeWords(input);
+
+            // Then
+            assertEquals(input, result);
+        }
     }
 }
