@@ -52,7 +52,7 @@
 * Should check case-insensitive substring                    [✅]
 * Should return false for non-existent substring             [✅]
 * Should return false for null and empty string or substring [✅]
-* Should remove duplicate characters                         [❌]
+* Should remove duplicate characters                         [✅]
 * Should handle string with no duplicates                    [❌]
 * Should preserve order when removing duplicates             [❌]
 * Should handle null and empty strings in duplicate removal  [❌]

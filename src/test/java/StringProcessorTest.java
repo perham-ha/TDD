@@ -452,10 +452,10 @@ public class StringProcessorTest {
             String expected = "progamin";
 
             // When
-            String result = stringProcessor.removeDuplicate(input);
+            String result = stringProcessor.removeDuplicates(input);
 
             // Then
-            assertThat(input).isEqualTo(expected);
+            assertThat(result).isEqualTo(expected);
         }
     }
 }

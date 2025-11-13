@@ -158,4 +158,16 @@ public class StringProcessor {
         }
         return str.toLowerCase().contains(substring.toLowerCase());
     }
+
+    public String removeDuplicates(String input) {
+        StringBuilder cleanedString = new StringBuilder();
+
+        for (char chars : input.toCharArray()) {
+            // Appends only if char was not already added
+            if (cleanedString.indexOf(String.valueOf(chars)) == -1)
+                cleanedString.append(chars);
+        }
+
+        return cleanedString.toString();
+    }
 }
