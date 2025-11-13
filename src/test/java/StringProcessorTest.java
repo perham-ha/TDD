@@ -385,5 +385,19 @@ public class StringProcessorTest {
             // Then
             assertEquals(input, result);
         }
+
+        @Test
+        @DisplayName("Should check if string contains substring")
+        void shouldCheckIfStringContainsSubstring() {
+            // Given
+            String input = "hello world";
+            String substring = "world";
+
+            // When
+            boolean result = stringProcessor.containsSubstring(input, substring);
+
+            // Then
+            assertTrue(result);
+        }
     }
 }
