@@ -620,5 +620,19 @@ public class StringProcessorTest {
             assertEquals('a', result.charAt(0));            // `a` at start
             assertEquals('a', result.charAt(length - 1));   // Still `a` at end
         }
+
+        @Test
+        @DisplayName("Should handle strings with special characters")
+        void shouldHandleStringsWithSpecialCharacters() {
+            // Given
+            String input = "åäö!#$;/@";
+            String expected = "@/;$#!öäå";
+
+            // When
+            String result = stringProcessor.reverse(input);
+
+            // Then
+            assertThat(result).isEqualTo(expected);
+        }
     }
 }
