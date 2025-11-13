@@ -40,7 +40,7 @@
 
 * Should validate email format                                      [✅]
 * Should reject invalid email formats                               [✅]
-* Should reject null and empty emails                               [❌]
+* Should reject null and empty emails                               [✅]
 
 ### String Manipulation Tests
 
