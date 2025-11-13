@@ -1,6 +1,8 @@
 package utils;
 
 
+import java.util.regex.Pattern;
+
 /*
 * StringProcessor class that gives functionality in handling Strings
 * Commentary is excessive as this is a tutorial course and I wish to
@@ -101,7 +103,15 @@ public class StringProcessor {
         return words.length;
     }
 
+    // Pattern ref. https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
+    // Regex ref. https://www.regular-expressions.info/email.html
+    private static final Pattern EMAIL_PATTERN = Pattern.compile (
+            "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b",
+            Pattern.CASE_INSENSITIVE
+    );
+
     public boolean isValidEmail(String email) {
-        return email.contains("@") && email.contains(".");
+
+        return EMAIL_PATTERN.matcher(email).matches();
     }
 }
