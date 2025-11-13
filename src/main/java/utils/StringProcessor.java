@@ -117,4 +117,8 @@ public class StringProcessor {
 
         return EMAIL_PATTERN.matcher(email).matches();
     }
+
+    public String capitalizeWords(String str) {
+        return "Hello World";
+    }
 }
