@@ -176,7 +176,11 @@ public class StringProcessor {
         return cleanedString.toString();
     }
 
-    public boolean isValidPhoneNumber(String phonenumber) {
-        return phonenumber.matches("^\\+?1?\\d{10}$");
+    public boolean isValidPhoneNumber(String phoneNumber) {
+        // Safeguard for null and empty phonenumber
+        if (phoneNumber == null || phoneNumber.isBlank()) {
+            return false;
+        }
+        return phoneNumber.matches("^\\+?1?\\d{10}$");
     }
 }

@@ -61,7 +61,7 @@
 
 * Should validate US phone number format         [✅]
 * Should reject invalid phone number formats     [✅]
-* Should reject null and empty phone numbers     [❌]
+* Should reject null and empty phone numbers     [✅]
 * Should validate URL format                     [❌]
 * Should reject invalid URL formats              [❌]
 * Should reject null and empty validation inputs [❌]
