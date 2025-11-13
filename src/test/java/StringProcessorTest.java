@@ -208,7 +208,7 @@ public class StringProcessorTest {
             int expected = 2;
 
             // When
-            int result = stringProcessor.wordCounter(input);
+            int result = stringProcessor.countWords(input);
 
             // Then
             assertEquals(expected, result);
@@ -222,7 +222,7 @@ public class StringProcessorTest {
             int expected = 3;
 
             // When
-            int result = stringProcessor.wordCounter(input);
+            int result = stringProcessor.countWords(input);
 
             // Then
             assertEquals(expected, result);
@@ -236,7 +236,7 @@ public class StringProcessorTest {
             int expected = 4;
 
             // When
-            int result = stringProcessor.wordCounter(input);
+            int result = stringProcessor.countWords(input);
 
             // Then
             assertEquals(expected, result);
@@ -250,7 +250,7 @@ public class StringProcessorTest {
             int expected = 1;
 
             // When
-            int result = stringProcessor.wordCounter(input);
+            int result = stringProcessor.countWords(input);
 
             // Then
             assertEquals(expected, result);
@@ -267,7 +267,7 @@ public class StringProcessorTest {
         @DisplayName("Should return zero for null, empty, or whitespace-only strings")
         void shouldReturnZeroForNullAndEmptyOrWhitespaceOnlyStrings(String input) {
             // When
-            int result = stringProcessor.wordCounter(input);
+            int result = stringProcessor.countWords(input);
 
             // Then
             assertEquals(0, result);

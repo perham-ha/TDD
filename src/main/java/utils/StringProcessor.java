@@ -90,7 +90,7 @@ public class StringProcessor {
         return compressedString.length() < str.length() ? compressedString.toString() : str;
     }
 
-    public int wordCounter(String str) {
+    public int countWords(String str) {
         if (str == null || str.isBlank()) {
             return 0;
         }
