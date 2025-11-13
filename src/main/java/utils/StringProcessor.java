@@ -9,6 +9,13 @@ import java.util.regex.Pattern;
 * make revisits easier.
 */
 public class StringProcessor {
+    // Pattern ref. https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
+    // Regex ref. https://www.regular-expressions.info/email.html
+    private static final Pattern EMAIL_PATTERN = Pattern.compile (
+            "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b",
+            Pattern.CASE_INSENSITIVE
+    );
+
     public String reverse(String str) {
         // Avoiding NullPointerException
         if (str == null) {
@@ -102,13 +109,6 @@ public class StringProcessor {
         String[] words = str.trim().split("\\s+");
         return words.length;
     }
-
-    // Pattern ref. https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
-    // Regex ref. https://www.regular-expressions.info/email.html
-    private static final Pattern EMAIL_PATTERN = Pattern.compile (
-            "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b",
-            Pattern.CASE_INSENSITIVE
-    );
 
     public boolean isValidEmail(String email) {
         if (email == null || email.isBlank()) {
