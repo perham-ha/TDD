@@ -443,5 +443,19 @@ public class StringProcessorTest {
             // Case 2 - Valid string, invalid substring
             assertFalse(stringProcessor.containsSubstring(validString, input));
         }
+
+        @Test
+        @DisplayName("Should remove duplicate characters")
+        void shouldRemoveDuplicates() {
+            // Given
+            String input = "programming";
+            String expected = "progamin";
+
+            // When
+            String result = stringProcessor.removeDuplicate(input);
+
+            // Then
+            assertThat(input).isEqualTo(expected);
+        }
     }
 }
