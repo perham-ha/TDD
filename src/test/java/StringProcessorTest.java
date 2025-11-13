@@ -302,5 +302,23 @@ public class StringProcessorTest {
             assertThat(stringProcessor.isValidEmail("test@test.")).isFalse();
             assertThat(stringProcessor.isValidEmail("test.test.test.com")).isFalse();
         }
+
+        @ParameterizedTest
+        @NullAndEmptySource
+        @ValueSource(strings = {
+                "   ",      // Spaces
+                "\t",       // Tab
+                "\n",       // Newline
+                " \n \t "   // Mix of different whitespace
+        })
+        @DisplayName("Should reject null and empty emails")
+        void shouldRejectNullAndEmptyEmails(String email) {
+            // Given
+            // When
+            boolean result = stringProcessor.isValidEmail(email);
+
+            // Then
+            assertFalse(result);
+        }
     }
 }
