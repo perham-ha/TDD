@@ -119,6 +119,9 @@ public class StringProcessor {
     }
 
     public String capitalizeWords(String str) {
+        if (str == null || str.isBlank()) {
+            return str;
+        }
 
         // Remove leading/trailing whitespaces and split on one or more whitespace characters
         // Multiple spaces, tabs, or newlines are treated as single separator
