@@ -547,5 +547,27 @@ public class StringProcessorTest {
             // Then
             assertThat(stringProcessor.isValidPhoneNumber(input)).isFalse();
         }
+
+        @ParameterizedTest
+        @DisplayName("Should validate URL format")
+        @ValueSource(strings = {
+                "http://test.com",
+                "https://test.com",
+                "http://www.test.com",
+                "https://www.test.com",
+                "https://test.com:8080",
+                "https://test.com?query=page",
+                "http://test.com:8080",
+                "http://test.com?query=page"
+        })
+        void shouldValidateURLFormat(String input) {
+            // Given in ValueSource
+
+            // When
+            boolean result = stringProcessor.isValidURL(input);
+
+            // Then
+            assertThat(result).isTrue();
+        }
     }
 }
