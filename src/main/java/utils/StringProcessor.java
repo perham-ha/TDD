@@ -160,6 +160,11 @@ public class StringProcessor {
     }
 
     public String removeDuplicates(String input) {
+        // Safeguard against null and empty input
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+
         StringBuilder cleanedString = new StringBuilder();
 
         for (char chars : input.toCharArray()) {
