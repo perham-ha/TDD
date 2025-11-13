@@ -399,5 +399,19 @@ public class StringProcessorTest {
             // Then
             assertTrue(result);
         }
+
+        @Test
+        @DisplayName("Should check case-insensitive substring")
+        void shouldCheckCaseInsensitiveSubstring() {
+            // Given
+            String input = "Hello World";
+            String substring = "world";
+
+            // When
+            boolean result = stringProcessor.containsSubstring(input, substring);
+
+            // Then
+            assertTrue(result);
+        }
     }
 }
