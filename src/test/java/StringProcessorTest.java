@@ -648,5 +648,19 @@ public class StringProcessorTest {
             // Then
             assertThat(result).isEqualTo(expected);
         }
+
+        @Test
+        @DisplayName("Should handle very long palindrome check")
+        void shouldHandleVeryLongPalindromeCheck() {
+            // Given - long palindrome with repeated chars
+            String palindrome = "abcba";
+            String input = palindrome.repeat(100_000); // 500k chars
+
+            // When
+            boolean result = stringProcessor.isPalindrome(input);
+
+            // Then
+            assertThat(result).isTrue();
+        }
     }
 }
