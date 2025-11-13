@@ -294,13 +294,13 @@ public class StringProcessorTest {
         @DisplayName("Should reject invalid email formats")
         void shouldRejectInvalidEmailFormats() {
             // Given
-            String input = "invalid-email";
-
             // When
-            boolean result = stringProcessor.isValidEmail(input);
-
             // Then
-            assertFalse(result);
+            assertThat(stringProcessor.isValidEmail("@email.com")).isFalse();
+            assertThat(stringProcessor.isValidEmail("fun-test")).isFalse();
+            assertThat(stringProcessor.isValidEmail("test@.")).isFalse();
+            assertThat(stringProcessor.isValidEmail("test@test.")).isFalse();
+            assertThat(stringProcessor.isValidEmail("test.test.test.com")).isFalse();
         }
     }
 }
