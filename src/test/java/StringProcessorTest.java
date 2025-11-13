@@ -273,4 +273,21 @@ public class StringProcessorTest {
             assertEquals(0, result);
         }
     }
+
+    @Nested
+    @DisplayName("Input Validation Tests")
+    class InputValidationTests {
+        @Test
+        @DisplayName("Should validate email format")
+        void shouldValidateEmailFormat() {
+            // Given
+            String input = "jacksparrow@email.com";
+
+            // When
+            boolean result = stringProcessor.isValidEmail(input);
+
+            // Then
+            assertTrue(result);
+        }
+    }
 }
