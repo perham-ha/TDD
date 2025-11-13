@@ -183,4 +183,8 @@ public class StringProcessor {
         }
         return phoneNumber.matches("^\\+?1?\\d{10}$");
     }
+
+    public boolean isValidURL(String url) {
+        return url.matches("^(http|https)://.*$");
+    }
 }
