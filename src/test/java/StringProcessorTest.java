@@ -634,5 +634,19 @@ public class StringProcessorTest {
             // Then
             assertThat(result).isEqualTo(expected);
         }
+
+        @Test
+        @DisplayName("Should handle Unicode characters")
+        void shouldHandleUnicodeCharacters() {
+            // Given - Farsi + Emoji
+            String input = "تستش کن😊";
+            String expected = "😊نک شتست";
+
+            // When
+            String result = stringProcessor.reverse(input);
+
+            // Then
+            assertThat(result).isEqualTo(expected);
+        }
     }
 }
