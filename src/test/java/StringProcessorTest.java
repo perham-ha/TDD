@@ -536,5 +536,16 @@ public class StringProcessorTest {
             // Then
             assertThat(result).isFalse();
         }
+
+        @ParameterizedTest
+        @NullAndEmptySource
+        @DisplayName("Should reject null and empty phone numbers")
+        void shouldRejectNullAndEmptyPhoneNumbers(String input) {
+            // Given in NullAndEmptySource
+
+            // When
+            // Then
+            assertThat(stringProcessor.isValidPhoneNumber(input)).isFalse();
+        }
     }
 }
