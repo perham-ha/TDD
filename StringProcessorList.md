@@ -68,7 +68,7 @@
 
 ### Performance and Edge Case Tests
 
-* Should handle very long strings in reversal      [❌]
+* Should handle very long strings in reversal      [✅]
 * Should handle strings with special characters    [❌]
 * Should handle Unicode characters                 [❌]
 * Should handle very long palindrome check         [❌]

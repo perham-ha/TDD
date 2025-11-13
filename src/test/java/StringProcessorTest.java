@@ -598,5 +598,27 @@ public class StringProcessorTest {
         void shouldRejectNullAndEmptyValidationInputs(String input) {
             assertThat(stringProcessor.isValidURL(input)).isFalse();
         }
+
+        @Test
+        @DisplayName("Should handle very long strings in reversal")
+        void shouldHandleVeryLongStringsInReversal() {
+            // Given
+            int length = 500_000;
+            StringBuilder testString = new StringBuilder(length);
+
+            // Generates a long predictable string (all letter as `a`)
+            for (int i = 0; i < length; i++) {
+                testString.append('a');
+            }
+            String longString = testString.toString();
+
+            // When
+            String result = stringProcessor.reverse(longString);
+
+            // Then
+            assertEquals(length, result.length());
+            assertEquals('a', result.charAt(0));            // `a` at start
+            assertEquals('a', result.charAt(length - 1));   // Still `a` at end
+        }
     }
 }
