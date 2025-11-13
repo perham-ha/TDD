@@ -48,7 +48,7 @@
 * Should handle single word capitalization                  [✅]
 * Should handle mixed case input in capitalization          [✅]
 * Should handle null and empty strings in capitalization    [✅]
-* Should check if string contains substring                 [❌]
+* Should check if string contains substring                 [✅]
 * Should check case-insensitive substring                   [❌]
 * Should return false for non-existent substring            [❌]
 * Should remove duplicate characters                        [❌]

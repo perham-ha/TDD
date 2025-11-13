@@ -151,4 +151,8 @@ public class StringProcessor {
         // Return the combined capitalized string
         return capitalizedWords.toString();
     }
+
+    public boolean containsSubstring(String str, String substring) {
+        return str.contains(substring);
+    }
 }
