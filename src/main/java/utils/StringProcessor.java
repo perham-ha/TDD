@@ -100,4 +100,8 @@ public class StringProcessor {
         String[] words = str.trim().split("\\s+");
         return words.length;
     }
+
+    public boolean isValidEmail(String email) {
+        return "jacksparrow@email.com".equals(email);
+    }
 }

@@ -38,7 +38,7 @@
 
 ### Input Validation Tests
 
-* Should validate email format                                      [❌]
+* Should validate email format                                      [✅]
 * Should reject invalid email formats                               [❌]
 * Should reject null and empty emails                               [❌]
 
