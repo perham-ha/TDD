@@ -212,5 +212,19 @@ public class StringProcessorTest {
             // Then
             assertEquals(expected, result);
         }
+
+        @Test
+        @DisplayName("Should handle multiple spaces between words")
+        void shouldHandleMultipleSpacesBetweenWords() {
+            // Given
+            String input = "hello   world  again";
+            int expected = 3;
+
+            // When
+            int result = stringProcessor.wordCounter(input);
+
+            // Then
+            assertEquals(expected, result);
+        }
     }
 }
