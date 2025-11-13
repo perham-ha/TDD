@@ -16,6 +16,13 @@ public class StringProcessor {
             Pattern.CASE_INSENSITIVE
     );
 
+    // Regex
+    // ref. https://uibakery.io/regex-library/url
+    private static final Pattern URL_PATTERN = Pattern.compile(
+            "^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+            Pattern.CASE_INSENSITIVE
+    );
+
     public String reverse(String str) {
         // Avoiding NullPointerException
         if (str == null) {
@@ -185,8 +192,6 @@ public class StringProcessor {
     }
 
     public boolean isValidURL(String url) {
-        // Regex
-        // ref. https://uibakery.io/regex-library/url
-        return url.matches("^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$");
+        return URL_PATTERN.matcher(url).matches();
     }
 }
