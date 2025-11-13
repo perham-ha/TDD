@@ -485,5 +485,19 @@ public class StringProcessorTest {
             // Then
             assertThat(result).isEqualTo(expected);
         }
+
+        @ParameterizedTest
+        @NullAndEmptySource
+        @DisplayName("Should handle null and empty strings in duplicate removal")
+        void shouldHandleNullAndEmptyStringsInDuplicateRemoval(String input) {
+            // Given
+            // Input values are null and empty
+
+            // When
+            String result = stringProcessor.removeDuplicates(input);
+
+            // Then
+            assertThat(result).isEqualTo(input);
+        }
     }
 }
