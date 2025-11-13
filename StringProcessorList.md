@@ -34,7 +34,7 @@
 * Should handle multiple spaces between words                       [✅]
 * Should handle leading and trailing spaces                         [✅]
 * Should count single word                                          [✅]
-* Should return zero for null, empty, or whitespace-only strings    [❌]
+* Should return zero for null, empty, or whitespace-only strings    [✅]
 
 ### Input Validation Tests
 

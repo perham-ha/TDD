@@ -91,7 +91,7 @@ public class StringProcessor {
     }
 
     public int wordCounter(String str) {
-        if (str == null || str.length() <= 1) {
+        if (str == null || str.isBlank()) {
             return 0;
         }
 
