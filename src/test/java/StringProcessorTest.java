@@ -471,5 +471,19 @@ public class StringProcessorTest {
             // Then
             assertThat(result).isEqualTo(expected);
         }
+
+        @Test
+        @DisplayName("Should preserve order when removing duplicates")
+        void shouldPreserveOrderWhenRemovingDuplicates() {
+            // Given
+            String input = "banana";
+            String expected = "ban";
+
+            // When
+            String result = stringProcessor.removeDuplicates(input);
+
+            // Then
+            assertThat(result).isEqualTo(expected);
+        }
     }
 }
