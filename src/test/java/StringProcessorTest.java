@@ -338,5 +338,19 @@ public class StringProcessorTest {
             // Then
             assertEquals(expected, result);
         }
+
+        @Test
+        @DisplayName("Should handle single word capitalization")
+        void shouldHandleSingleWordCapitalization() {
+            // Given
+            String input = "hello";
+            String expected = "Hello";
+
+            // When
+            String result = stringProcessor.capitalizeWords(input);
+
+            // Then
+            assertEquals(expected, result);
+        }
     }
 }
