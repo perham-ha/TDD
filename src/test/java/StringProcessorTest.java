@@ -240,5 +240,19 @@ public class StringProcessorTest {
             // Then
             assertEquals(expected, result);
         }
+
+        @Test
+        @DisplayName("Should count single word")
+        void shouldCountSingleWord() {
+            // Given
+            String input = "hello";
+            int expected = 1;
+
+            // When
+            int result = stringProcessor.wordCounter(input);
+
+            // Then
+            assertEquals(expected, result);
+        }
     }
 }
