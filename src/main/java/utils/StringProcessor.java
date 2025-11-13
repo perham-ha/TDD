@@ -185,6 +185,8 @@ public class StringProcessor {
     }
 
     public boolean isValidURL(String url) {
-        return url.matches("^(http|https)://.*$");
+        // Regex
+        // ref. https://uibakery.io/regex-library/url
+        return url.matches("^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$");
     }
 }
