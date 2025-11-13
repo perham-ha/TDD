@@ -153,6 +153,9 @@ public class StringProcessor {
     }
 
     public boolean containsSubstring(String str, String substring) {
+        if (str == null || str.isEmpty() || substring == null ||  substring.isEmpty()) {
+            return false;
+        }
         return str.toLowerCase().contains(substring.toLowerCase());
     }
 }
