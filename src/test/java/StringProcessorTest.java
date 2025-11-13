@@ -569,5 +569,27 @@ public class StringProcessorTest {
             // Then
             assertThat(result).isTrue();
         }
+
+        @ParameterizedTest
+        @DisplayName("Should reject invalid URL formats")
+        @ValueSource(strings = {
+            "test.com",                 // No protocol
+            "www.test.com",             // No protocol
+            "hppt://test.com",          // Incorrect protocol
+            "https:/test.com",          // Incorrect format
+            "http//test.com",           // No colon
+            "https://",                 // Only protocol
+            "https://",                  // Only protocol
+            "https://???",               // Invalid hostname
+            "https:// spaceintest.com"  // Space in url
+        })
+        void shouldRejectInvalidURLFormats(String input) {
+            // Given in ValueSource
+            // When
+            boolean result = stringProcessor.isValidURL(input);
+
+            // Then
+            assertThat(result).isFalse();
+        }
     }
 }
