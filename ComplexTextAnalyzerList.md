@@ -36,9 +36,9 @@
 * Should handle large text analysis efficiently               [❌]
 * Should handle edge cases and malformed input gracefully     [❌]
 
-### Integration with Calculator and StringProcessor Tests
+### Integration with utils.Calculator and StringProcessor Tests
 
-* Should integrate with Calculator for statistical calculations [❌]
+* Should integrate with utils.Calculator for statistical calculations [❌]
 * Should integrate with StringProcessor for text manipulation   [❌]
 
 ---

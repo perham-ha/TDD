@@ -2,9 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import utils.SentimentCategory;
-import utils.SentimentResult;
-import utils.StringProcessor;
+import utils.*;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -32,7 +30,7 @@ public class TextAnalyzerTest {
             String positiveText = "This is such a lovely and beautiful day";
 
             // When
-            SentimentResult result = analyser.analyzeSentiment(positiveText);
+            SentimentResult result = analyzer.analyzeSentiment(positiveText);
 
             // Then
             assertThat(result.getPositiveWordCount()).isGreaterThan(0);                 // Expects more than 0 positive words

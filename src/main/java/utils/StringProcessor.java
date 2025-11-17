@@ -4,14 +4,14 @@ package utils;
 import java.util.regex.Pattern;
 
 /*
-* StringProcessor class that gives functionality in handling Strings
-* Commentary is excessive as this is a tutorial course and I wish to
-* make revisits easier.
-*/
+ * StringProcessor class that gives functionality in handling Strings
+ * Commentary is excessive as this is a tutorial course and I wish to
+ * make revisits easier.
+ */
 public class StringProcessor {
     // Pattern ref. https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
     // Regex ref. https://www.regular-expressions.info/email.html
-    private static final Pattern EMAIL_PATTERN = Pattern.compile (
+    private static final Pattern EMAIL_PATTERN = Pattern.compile(
             "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b",
             Pattern.CASE_INSENSITIVE
     );
@@ -91,7 +91,9 @@ public class StringProcessor {
                 compressedString.append(previous).append(count);
 
                 // In case compressedString reaches str length during compression
-                if(compressedString.length() >= str.length()) {return str;}
+                if (compressedString.length() >= str.length()) {
+                    return str;
+                }
                 previous = current;
                 count = 1;
             }
@@ -150,7 +152,7 @@ public class StringProcessor {
             }
 
             // Append space only between words, not after last one (avoid trailing space
-            if (i < initialWords.length -1) {
+            if (i < initialWords.length - 1) {
                 capitalizedWords.append(" ");
             }
         }
@@ -160,7 +162,7 @@ public class StringProcessor {
     }
 
     public boolean containsSubstring(String str, String substring) {
-        if (str == null || str.isEmpty() || substring == null ||  substring.isEmpty()) {
+        if (str == null || str.isEmpty() || substring == null || substring.isEmpty()) {
             return false;
         }
         return str.toLowerCase().contains(substring.toLowerCase());
