@@ -24,6 +24,7 @@ public class TextAnalyzerTest {
     @Nested
     @DisplayName("Sentiment Analysis Test")
     class SentimentAnalysisTest {
+
         @Test
         @DisplayName("Should analyze positive sentiment correctly")
         void shouldAnalyzePositiveSentimentCorrectly() {
@@ -34,9 +35,9 @@ public class TextAnalyzerTest {
             SentimentResult result = analyser.analyzeSentiment(positiveText);
 
             // Then
-            assertThat(result.getPositiveWordCount()).isGreaterThan(0);
-            assertThat(result.getSentimentCategory()).isEqualTo(SentimentCategory.POSITIVE);
-            assertThat(result.getSentimentScore()).isGreaterThan(0);
+            assertThat(result.getPositiveWordCount()).isGreaterThan(0);                 // Expects more than 0 positive words
+            assertThat(result.getSentimentCategory()).isEqualTo(SentimentCategory.POSITIVE);  // Expects a positive ENUM
+            assertThat(result.getSentimentScore()).isGreaterThan(0);                    // Expects a sentiment score above 0
         }
     }
 }
