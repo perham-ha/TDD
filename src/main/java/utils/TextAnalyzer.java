@@ -21,6 +21,10 @@ public class TextAnalyzer {
 
     public SentimentResult analyzeSentiment(String text) {
 
+        // In case of empty text
+        if (text == null || text.isEmpty()) {
+            return new SentimentResult(0.0, SentimentCategory.NEUTRAL, 0, 0);
+        }
         // Convert text to predictable format
         String formattedText = text.toLowerCase().replaceAll("[^a-zA-Z0-9\\s]", "");
         String[] listOfWords = formattedText.split("\\s+");
