@@ -44,10 +44,10 @@ public class TextAnalyzerTest {
         @DisplayName("Should analyze negative sentiment correctly")
         void shouldAnalyzeNegativeSentimentCorrectly() {
             // Given
-            String positiveText = "I think we are all doomed, this is useless.";
+            String negativeText = "I think we are all doomed, this is useless.";
 
             // When
-            SentimentResult result = analyzer.analyzeSentiment(positiveText);
+            SentimentResult result = analyzer.analyzeSentiment(negativeText);
 
             // Then
             assertThat(result.getNegativeWordCount()).isGreaterThan(0);                 // Expects more than 0 negative words
@@ -59,10 +59,10 @@ public class TextAnalyzerTest {
         @DisplayName("Should analyze neutral sentiment correctly")
         void shouldAnalyzeNeutralSentimentCorrectly() {
             // Given
-            String positiveText = "I can be ugly and still happy";
+            String neutralText = "I can be ugly and still happy";
 
             // When
-            SentimentResult result = analyzer.analyzeSentiment(positiveText);
+            SentimentResult result = analyzer.analyzeSentiment(neutralText);
 
             // Then
             assertThat(result.getPositiveWordCount() - result.getNegativeWordCount())
