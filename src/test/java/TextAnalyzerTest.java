@@ -37,5 +37,20 @@ public class TextAnalyzerTest {
             assertThat(result.getSentimentCategory()).isEqualTo(SentimentCategory.POSITIVE);  // Expects a positive ENUM
             assertThat(result.getSentimentScore()).isGreaterThan(0.5);                    // Expects a sentiment score above 0
         }
+
+        @Test
+        @DisplayName("Should analyze negative sentiment correctly")
+        void shouldAnalyzeNegativeSentimentCorrectly() {
+            // Given
+            String positiveText = "I think we are all doomed, this is useless.";
+
+            // When
+            SentimentResult result = analyzer.analyzeSentiment(positiveText);
+
+            // Then
+            assertThat(result.getNegativeWordCount()).isGreaterThan(0);                 // Expects more than 0 positive words
+            assertThat(result.getSentimentCategory()).isEqualTo(SentimentCategory.NEGATIVE);  // Expects a positive ENUM
+            assertThat(result.getSentimentScore()).isLessThan(-0.5);                  // Expects a sentiment score above 0
+        }
     }
 }
