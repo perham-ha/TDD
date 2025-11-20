@@ -2,6 +2,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import utils.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -69,5 +71,23 @@ public class TextAnalyzerTest {
             assertThat(result.getSentimentScore()).isBetween(-0.5, 0.5);                     // Expects a sentiment score above 0
         }
 
+        @ParameterizedTest
+        // CsvSource for multiple arguments, `4.4. CSV Literals`
+        // ref. https://www.baeldung.com/parameterized-tests-junit-5#4-csv-literals
+        @CsvSource({
+                "This is a happy sentence,POSITIVE",
+                "This is a sad sentence,NEGATIVE",
+                "This is both a happy and sad sentence,NEUTRAL",
+                "This is a completely neutral sentence,NEUTRAL"
+        })
+        @DisplayName("Should classify sentiment categories correctly")
+        void shouldClassifySentimentCategoriesCorrectly(String text, SentimentCategory expectedCategory) {
+            // Given Values in CSVSource
+            // When
+            SentimentResult result = analyzer.analyzeSentiment(text);
+
+            // Then
+            assertThat(result.getSentimentCategory()).isEqualTo(expectedCategory); // Expects category for text to be correct
+        }
     }
 }
