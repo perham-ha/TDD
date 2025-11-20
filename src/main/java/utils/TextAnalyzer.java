@@ -47,9 +47,9 @@ public class TextAnalyzer {
 
         // Categorization depending on sentimentScore and sentimentCount
         SentimentCategory category;
-        if (sentimentScore > 0 || positiveWordCount > 0) {
+        if (sentimentScore > 0.5 || positiveWordCount > 0) {
             category = SentimentCategory.POSITIVE;
-        } else if (sentimentScore < 0 || negativeWordCount > 0) {
+        } else if (sentimentScore < -0.5 || negativeWordCount > 0) {
             category = SentimentCategory.NEGATIVE;
         } else {
             category = SentimentCategory.NEUTRAL;
