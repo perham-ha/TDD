@@ -6,9 +6,9 @@
 
 ### Sentiment Analysis Tests
 
-* Should analyze positive sentiment correctly                 [❌]
-* Should analyze negative sentiment correctly                 [❌]
-* Should analyze neutral sentiment correctly                  [❌]
+* Should analyze positive sentiment correctly                 [✅]
+* Should analyze negative sentiment correctly                 [✅]
+* Should analyze neutral sentiment correctly                  [✅]
 * Should classify sentiment categories correctly              [❌]
 * Should handle empty text in sentiment analysis              [❌]
 
