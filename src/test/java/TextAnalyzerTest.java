@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import utils.*;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Complex TextAnalyzer TDD Demo")
 public class TextAnalyzerTest {
@@ -35,7 +35,7 @@ public class TextAnalyzerTest {
             // Then
             assertThat(result.getPositiveWordCount()).isGreaterThan(0);                 // Expects more than 0 positive words
             assertThat(result.getSentimentCategory()).isEqualTo(SentimentCategory.POSITIVE);  // Expects a positive ENUM
-            assertThat(result.getSentimentScore()).isGreaterThan(0);                    // Expects a sentiment score above 0
+            assertThat(result.getSentimentScore()).isGreaterThan(0.5);                    // Expects a sentiment score above 0
         }
     }
 }
