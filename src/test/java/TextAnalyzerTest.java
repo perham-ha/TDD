@@ -89,5 +89,21 @@ public class TextAnalyzerTest {
             // Then
             assertThat(result.getSentimentCategory()).isEqualTo(expectedCategory); // Expects category for text to be correct
         }
+
+        @Test
+        @DisplayName("Should handle empty text in sentiment analysis")
+        void shouldHandleEmptyTextInSentimentAnalysis() {
+            // Given
+            String emptyText = "";
+
+            // When
+            SentimentResult result = analyzer.analyzeSentiment(emptyText);
+
+            // Then
+            assertThat(result.getPositiveWordCount() - result.getNegativeWordCount())
+                    .isEqualTo(0);                                                  // Expects equal number of positive and negative words
+            assertThat(result.getSentimentCategory()).isEqualTo(SentimentCategory.NEUTRAL);  // Expects a neutral ENUM
+            assertThat(result.getSentimentScore()).isBetween(-0.5, 0.5);                     // Expects a sentiment score above 0
+        }
     }
 }
