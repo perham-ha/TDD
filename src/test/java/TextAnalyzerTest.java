@@ -48,9 +48,26 @@ public class TextAnalyzerTest {
             SentimentResult result = analyzer.analyzeSentiment(positiveText);
 
             // Then
-            assertThat(result.getNegativeWordCount()).isGreaterThan(0);                 // Expects more than 0 positive words
-            assertThat(result.getSentimentCategory()).isEqualTo(SentimentCategory.NEGATIVE);  // Expects a positive ENUM
-            assertThat(result.getSentimentScore()).isLessThan(-0.5);                  // Expects a sentiment score above 0
+            assertThat(result.getNegativeWordCount()).isGreaterThan(0);                 // Expects more than 0 negative words
+            assertThat(result.getSentimentCategory()).isEqualTo(SentimentCategory.NEGATIVE);  // Expects a negative ENUM
+            assertThat(result.getSentimentScore()).isLessThan(-0.5);                    // Expects a sentiment score below 0
         }
+
+        @Test
+        @DisplayName("Should analyze neutral sentiment correctly")
+        void shouldAnalyzeNeutralSentimentCorrectly() {
+            // Given
+            String positiveText = "I can be ugly and still happy";
+
+            // When
+            SentimentResult result = analyzer.analyzeSentiment(positiveText);
+
+            // Then
+            assertThat(result.getPositiveWordCount() - result.getNegativeWordCount())
+                    .isEqualTo(0);                                                  // Expects equal number of positive and negative words
+            assertThat(result.getSentimentCategory()).isEqualTo(SentimentCategory.NEUTRAL);  // Expects a neutral ENUM
+            assertThat(result.getSentimentScore()).isBetween(-0.5, 0.5);                     // Expects a sentiment score above 0
+        }
+
     }
 }
