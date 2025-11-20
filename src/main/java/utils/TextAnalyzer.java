@@ -11,7 +11,7 @@ public class TextAnalyzer {
     );
 
     private static final Set<String> NEGATIVE_WORDS = Set.of(
-            "ugly", "despise", "sad", "depression", "hate", "bad", "worst", "hatred"
+            "ugly", "despise", "sad", "depression", "hate", "bad", "worst", "hatred", "doomed", "useless"
     );
 
     public TextAnalyzer(Calculator calculator, StringProcessor stringProcessor) {
